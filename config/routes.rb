@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     get 'followers' => 'relationships#followers', as: 'followers'
   end
 
+  get "search" => "searches#search"
+
   resource :relationships, only: [:create, :destroy]
 
   get "home/about"=>"homes#about"
