@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="fontawesome-i2svg-active fontawesome-i2svg-complete">
+<html>
   <head>
     <title>Bookers2Ver2</title>
     <%= csrf_meta_tags %>
@@ -9,15 +9,12 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <% flash.each do |key, value| %>
-    <%= content_tag(:div, value, class: "#{key}") %>
-  　<% end %>
-
     <%= render 'layouts/header' %>
-    <%= render 'layouts/search' %>
-
-      <main class= "mb-auto">
-        <!--p id="notice"><!--%= notice %></p-->
+      <main>
+        <p id="notice"><%= notice %></p>
+        <div class="d-flex justify-content-center mb-2">
+          <%= render 'searches/form' %>
+        </div>
         <%= yield %>
       </main>
     <%= render 'layouts/footer' %>
